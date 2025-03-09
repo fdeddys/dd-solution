@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dd Solution - Home</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+<!-- Navbar (Loaded Dynamically) -->
+<nav class="bg-red-700 text-white py-4">
+    <div class="container mx-auto flex justify-between items-center px-4">
+        <a href="index.html" class="text-2xl font-bold">Dd Solution</a>
+        <ul class="flex space-x-4">
+            <li><a href="index.html" class="hover:text-red-200" data-en="Home" data-es="Inicio">Home</a></li>
+            <li><a href="about.html" class="hover:text-red-200" data-en="About Us" data-es="Sobre Nosotros">About Us</a></li>
+            <li><a href="services.html" class="hover:text-red-200" data-en="Services" data-es="Servicios">Services</a></li>
+            <li><a href="portfolio.html" class="hover:text-red-200" data-en="Portfolio" data-es="Portafolio">Portfolio</a></li>
+            <li><a href="contact.html" class="hover:text-red-200" data-en="Contact Us" data-es="Contacto">Contact Us</a></li>
+        </ul>
+        <div class="flex space-x-2">
+            <button class="bg-white text-red-700 px-2 py-1 rounded hover:bg-red-100" onclick="switchLanguage('en')">EN</button>
+            <button class="bg-white text-red-700 px-2 py-1 rounded hover:bg-red-100" onclick="switchLanguage('es')">ES</button>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<div class="container mx-auto my-10 p-6 bg-red-100 rounded shadow-md text-center animate-fade-in">
+    <h4 class="text-3xl font-semibold text-red-800 mb-4" data-en="Bringing Your Business to Digital" data-es="Llevando Tu Negocio a lo Digital">
+        Bringing Your Business to Digital
+    </h4>
+    <p class="text-red-700 mb-6" data-en="We transform your business with innovative software solutions." 
+       data-es="Transformamos tu negocio con soluciones innovadoras.">
+        We transform your business with innovative software solutions.
+    </p>
+    <a href="services.html" class="bg-red-700 text-white py-2 px-4 rounded hover:bg-red-800 transition" 
+       data-en="Explore Services" data-es="Explorar Servicios">
+        Explore Services
+    </a>
+</div>
+
+<!-- Footer (Loaded Dynamically) -->
+<footer class="bg-red-700 text-white py-4 mt-10">
+    <div class="text-center">
+        <p data-en="&copy; 2025 Dd Solution. All rights reserved." 
+           data-es="&copy; 2025 Dd Solution. Todos los derechos reservados.">
+            &copy; 2025 Dd Solution. All rights reserved.
+        </p>
+    </div>
+</footer>
+<script>
+
+function switchLanguage(lang) {
+    const elements = document.querySelectorAll("[data-en]");
+    elements.forEach((el) => {
+        const text = el.getAttribute(`data-${lang}`);
+        if (text) {
+            el.textContent = text;
+        }
+    });
+}
+
+</script>
+</body>
+
+</html>
